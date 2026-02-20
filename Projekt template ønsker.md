@@ -1,0 +1,2 @@
+- Shortcut til at skifte læsebredte
+- Shortcut til at skifte mellem tab/stack mode
