@@ -1,0 +1,14 @@
+{
+  "tinymist.exportPdf": "onSave",
+  "tinymist.outputPath": "$root/$dir/$name.pdf",
+  "tinymist.fontPaths": ["./report/fonts"],
+  "[typst]": { "editor.formatOnSave": true, "editor.wordWrap": "on" },
+  "[csharp]": { "editor.formatOnSave": true },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    "**/obj": true,
+    ".obsidian": true
+  }
+}
