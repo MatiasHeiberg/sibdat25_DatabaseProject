@@ -13,7 +13,7 @@ Bil[Bil] <--> Bruger[Bruger]
 Bil[Bil] <--> Bruger[Bruger]
 
 
-
+Bruger[Bruger] <--> Lejer[Lejer] 
 Bruger[Bruger] <--> Navn([Navn])
 Bruger[Bruger] <--> Cpr([Cpr])
 Bruger[Bruger] <--> B_Navn([B_Navn])
@@ -29,16 +29,3 @@ Slut([Slut])
 
 
 
-Start([Start])  
-ValiderKunde{Er kunde gyldig?}  
-OpretOrdre[Opret ordre]  
-OpdaterLager[Opdater lager]  
-SendKvittering[Send kvittering]  
-Slut([Slut])  
-  
-Start --> ValiderKunde  
-ValiderKunde -->|Ja| OpretOrdre  
-ValiderKunde -->|Nej| Slut  
-OpretOrdre --> OpdaterLager  
-OpdaterLager --> SendKvittering  
-SendKvittering --> Slut
