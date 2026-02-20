@@ -14,7 +14,7 @@ Info på lejeren
 - Navn
 - Kørekortnr
 - Telefon
-- E-mailadresse
+- E-mailadresse 
 - Postadresse
 Info på chaufør
 - Samme som lejeren
