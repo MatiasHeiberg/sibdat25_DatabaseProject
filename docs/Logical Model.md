@@ -12,6 +12,7 @@ role
 phone_number
 employee_status
 }
+
 Vehicle{
 vehicle_id
 number_plate
@@ -20,6 +21,7 @@ vehicle_type
 next_service_date
 nextInspectionDate
 }
+
 Assignment{
 assignment_id
 start_date
@@ -28,29 +30,34 @@ street_name
 house_number
 postal_code
 }
+
 Maintenance{
 maintenance_id
 maintenance_date
 maintenance_type
+vehicle_id_FK 
 }
 
-Performance{
-
+Assignment_Performance{
+employee_id_PK
+assignment_id_PK
 }
-Maintenance[Maintenance] --> |n,m|Applies{Applies} 
-Applies{Applies} --> |1,1|Vehicle[Vehicle]
 
-Employee[Employee] --> |n,m|Performs{Performs} 
-Performs{Performs} --> |n,m|Assignment[Assignment]
+Vehicle_Assignment{
+vehicle_id_PK
+assignment_id_PK
+}
 
-Vehicle[Vehicle] --> |n,m|IsAssignedTo{IsAssignedTo}
-IsAssignedTo{IsAssignedTo} --> |n,m|Assignment[Assignment]
+Employee_Operation{
+employee_id_PK
+vehicle_id_PK
+}
 
-Employee[Employee] --> |n,m|Operates{Operates} 
-Operates{Operates} --> |n,m|Vehicle[Vehicle]
 
-Employee}o--o{Vehicle
-Vehicle}o--o{Assignment : I
+
+
+
+
 
 
 

@@ -3,8 +3,8 @@ ER Diagram
 ```mermaid  
 flowchart TB
 
-Maintenance[Maintenance] --> |n,m|Applies{Applies} 
-Applies{Applies} --> |1,1|Vehicle[Vehicle]
+Maintenance[Maintenance] --> |1,1|Applies{Applies} 
+Applies{Applies} --> |1,n|Vehicle[Vehicle]
 
 Employee[Employee] --> |n,m|Performs{Performs} 
 Performs{Performs} --> |n,m|Assignment[Assignment]

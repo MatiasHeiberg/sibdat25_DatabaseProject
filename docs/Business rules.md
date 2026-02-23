@@ -32,3 +32,11 @@ Flere brugere koster ekstra (standard er en bruger/lejeren)
 Blacklist over dårlige kunder
 Oversigt over lejeperioder per udlejningsbil
 Leje af bil kræver et kørekort
+
+
+
+
+
+- `|1,1|` fra Maintenance til Applies → hver Maintenance gælder **præcis én Vehicle**.
+    
+- `|1,n|` fra Applies til Vehicle → hver Vehicle kan have **flere Maintenance-records**.
