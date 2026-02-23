@@ -4,6 +4,53 @@ ER Diagram
 ```mermaid
 erDiagram
 
+Employee{
+employee_id
+surname
+first_name
+role
+phone_number
+employee_status
+}
+Vehicle{
+vehicle_id
+number_plate
+vehicle_status
+vehicle_type
+next_service_date
+nextInspectionDate
+}
+Assignment{
+assignment_id
+start_date
+end_date
+street_name
+house_number
+postal_code
+}
+Maintenance{
+maintenance_id
+maintenance_date
+maintenance_type
+}
+
+Performance{
+
+}
+Maintenance[Maintenance] --> |n,m|Applies{Applies} 
+Applies{Applies} --> |1,1|Vehicle[Vehicle]
+
+Employee[Employee] --> |n,m|Performs{Performs} 
+Performs{Performs} --> |n,m|Assignment[Assignment]
+
+Vehicle[Vehicle] --> |n,m|IsAssignedTo{IsAssignedTo}
+IsAssignedTo{IsAssignedTo} --> |n,m|Assignment[Assignment]
+
+Employee[Employee] --> |n,m|Operates{Operates} 
+Operates{Operates} --> |n,m|Vehicle[Vehicle]
+
+Employee}o--o{Vehicle
+Vehicle}o--o{Assignment : I
 
 
 

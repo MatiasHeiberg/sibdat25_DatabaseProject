@@ -1,5 +1,4 @@
-ER Diagram 
-ER Diagram 
+ER Diagram  
 
 ```mermaid  
 flowchart TB
@@ -37,18 +36,17 @@ Assignment[Assignment] <--> start_date([start_date : Date])
 Assignment[Assignment] <--> end_date([end_date : Date])
 
 Assignment[Assignment] <--> address([address : String])
-address([address]) <--> streetName([streetName : String])
-address([address]) <--> houseNumber([houseNumber : String])
-address([address]) <--> postalCode([postalCode : String])
+address([address]) <--> street_name([street_name : String])
+address([address]) <--> house_number([house_number : String])
+address([address]) <--> postal_code([postal_code : String])
 address([address]) <--> city(city : String)
 style city stroke-dasharray: 5 5
 
-Maintenance[Maintenance] <--> maintenance_date([Maintenance_date : Date])
-Maintenance[Maintenance] <--> maintenance_type([Maintenance_type : String])
+Maintenance[Maintenance] <--> maintenance_date([maintenance_date : Date])
+Maintenance[Maintenance] <--> maintenance_type([maintenance_type : String])
 Maintenance[Maintenance] <--> maintenance_id("<u>maintenance_id : Int</u>")
 
 ```
-```
 
 
 
@@ -73,6 +71,16 @@ Maintenance[Maintenance] <--> maintenance_id("<u>maintenance_id : Int</u>")
 
 
 
+
+
+
+
+
+
+
+
+
+Gammel version: 
 ```mermaid  
 flowchart TB
 
