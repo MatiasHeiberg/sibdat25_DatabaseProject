@@ -4,6 +4,8 @@ Se alle medarbejdere og telefonnummer.
 Se alle køretøjer rådighedsstatus.
 Se hvilke køretøjer der skal til syn/service/på værksted som de næste.
 Se hvilken kørekorts kategori medarbejder har samt hvilken kategori køretøj opgaven kræver.
+Manuelt kunne ændre status på biler
+Have mulighed for at se hvilke opgaver der er tæt på hinanden.
 
 Version 1
 Kun private lejere
