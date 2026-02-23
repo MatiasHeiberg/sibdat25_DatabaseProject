@@ -20,7 +20,7 @@ isOfType{isOfType} --> Type[Type]
 
 Vehicle[Vehicle] <--> VehicleID([VehicleID])
 Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
-Vehicle[Vehicle] <--> V.Type([V.Type])
+
 Vehicle[Vehicle] <--> Status([Status])
 Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
 Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
@@ -29,7 +29,7 @@ Employee[Employee] --> EmployeeID([EmployeeID])
 Employee[Employee] <--> Name([Name])
 Employee[Employee] <--> Role([Role])
 Employee[Employee] <--> PhoneNR([PhoneNR]) 
-Employee[Employee] <--> Active([Active]) 
+Employee[Employee] <--> Status([Status]) 
 Assignment[Assignment] <--> AssignmentID([AssignmentID])
 Assignment[Assignment] <--> StartDate([StartDate])
 Assignment[Assignment] <--> EndDate([EndDate])

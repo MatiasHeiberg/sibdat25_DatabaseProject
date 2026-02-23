@@ -20,7 +20,7 @@ isOfType{isOfType} --> Type[Type]
 
 Vehicle[Vehicle] <--> VehicleID("<u>VehicleID</u>")
 Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
-Vehicle[Vehicle] <--> V.Type([V.Type])
+
 Vehicle[Vehicle] <--> Status([Status])
 Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
 Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
