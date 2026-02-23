@@ -1,3 +1,10 @@
+Version 2
+Vi vil gerne kunne se hvilke medarbejdere der er tilknyttet hvilke opgaver og køretøjer.
+Se alle medarbejdere og telefonnummer.
+Se alle køretøjer rådighedsstatus.
+Se hvilke køretøjer der skal til syn/service/på værksted som de næste.
+
+Version 1
 Kun private lejere
 Info på udlejningsbiler
 - Bilens person kapacitet
