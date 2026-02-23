@@ -3,14 +3,31 @@ Relation Model
 
 ```mermaid
 erDiagram  
-KUNDE {  
-int KundeID PK  
-string Navn  
-string Email  
+EMPLOYEE {  
+EmployeeId int PK
+E_Status varchar()
+Name varchar()
+Role varchar()
+PhoneNr varchar()  
 }  
   
-ORDRE {  
-int OrdreID PK  
-date Dato  
-int KundeID FK  
+VEHICLE {  
+VehicleId int PK  
+NumberPlate varchar  
+V_Status varchar()
+NextServiceDate date
+NextInspectionDate date  
 }
+
+ASSIGNMENT {
+AssignmentId int
+StartDate date
+EndDate date
+StreetName 
+HouseNr 
+
+
+}
+
+
+

@@ -3,25 +3,23 @@ ER Diagram
 ```mermaid  
 flowchart TB
 
-Maintenance[Maintenance] --> |0,n|applies{applies} 
+Maintenance[Maintenance] --> |n,m|applies{applies} 
 applies{applies} --> |1,1|Vehicle[Vehicle]
 
-Employee[Employee] --> performs{performs} 
-performs{performs} --> Assignment[Assignment]
+Employee[Employee] --> |n,m|performs{performs} 
+performs{performs} --> |n,m|Assignment[Assignment]
 
-Vehicle[Vehicle] --> |0,n|isAssignedTo{isAssignedTo}
-isAssignedTo{isAssignedTo} --> |0,n|Assignment[Assignment]
+Vehicle[Vehicle] --> |n,m|isAssignedTo{isAssignedTo}
+isAssignedTo{isAssignedTo} --> |n,m|Assignment[Assignment]
 
-Employee[Employee] --> operates{operates} 
-operates{operates} --> Type[Type]
-
-Vehicle[Vehicle] --> isOfType{isOfType} 
-isOfType{isOfType} --> Type[Type]
+Employee[Employee] --> |n,m|operates{operates} 
+operates{operates} --> |n,m|Vehicle[Vehicle]
 
 Vehicle[Vehicle] <--> VehicleID("<u>VehicleID</u>")
 Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
 
 Vehicle[Vehicle] <--> Status([Status])
+Vehicle[Vehicle] <--> V.Type([V.Type])
 Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
 Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
 
@@ -40,16 +38,14 @@ Assignment[Assignment] <--> EndDate([EndDate])
 Assignment[Assignment] <--> StreetName([StreetName])
 Assignment[Assignment] <--> HouseNR([HouseNR])
 Assignment[Assignment] <--> PostalCode([PostalCode])
-Assignment[Assignment] <--> City([City])
+Assignment[Assignment] <--> City(City)
+style City stroke-dasharray: 2
 
 
 Maintenance[Maintenance] <--> Date([Date])
 Maintenance[Maintenance] <--> M.Type([M.Type])
 Maintenance[Maintenance] <--> MaintenanceID("<u>MaintenanceID</u>")
-Type[Type] <--> Model([Model])
-Type[Type] <--> Category([Category])
-Type[Type] --> TypeID("<u>TypeID</u>")
 
 
 
-Employee[Employee] --> ID("<u>EmployeeID</u>")
+
