@@ -3,30 +3,52 @@ ER Diagram
 ```mermaid  
 flowchart TB
 
-Lejer[Lejer] <--> |Lejer| Bil[Bil]
-Bil[Bil] <-->|har| Kører[Kører] 
-Kører[Kører] <--> Lejer[Lejer]
+Maintenance[Maintenance] --> applies{applies} 
+applies{applies} --> Vehicle[Vehicle]
 
-Bil[Bil] <--> StelNR([StelNR])
-Bil[Bil] <--> Nummerplade([Nummerplade])
-Bil[Bil] <--> Kapacitet([Kapacitet])
-Bil[Bil] <--> Model([Model])
-Bil[Bil] <--> Pris([Pris])
-Bil[Bil] <--> Årstal([Årstal])
-Bil[Bil] <--> Lejeperiode([Lejeperiode]) 
-Bil[Bil] <--> Motortype([Motortype]) 
-Bil[Bil] <--> Drivmiddel([Drivmiddel])
-Bil[Bil] <--> Udstyrsniveau([Udstyrsniveau])
-Bil[Bil] <--> Rækkevidde([Rækkevidde])
+Employee[Employee] --> performs{performs} 
+performs{performs} --> Assignment[Assignment]
 
-Kører[Kører] <--> Lejer[Lejer] 
-Kører[Kører] <--> K_Navn([K_Navn])
-Kører[Kører] <--> Cpr([Cpr])
-Lejer[Lejer] <--> KørekortNR([KørekortNR])
-Lejer[Lejer] <--> Adresse([Adresse])
-Lejer[Lejer] <--> Navn([Navn])
-Lejer[Lejer] <--> TelefonNR([TelefonNR])
-Lejer[Lejer] <--> Mail([Mail])
+Vehicle[Vehicle] --> isAssignedTo{isAssignedTo}
+isAssignedTo{isAssignedTo} --> Assignment[Assignment]
+
+Employee[Employee] --> operates{operates} 
+operates{operates} --> Type[Type]
+
+Vehicle[Vehicle] --> isOfType{isOfType} 
+isOfType{isOfType} --> Type[Type]
+
+Vehicle[Vehicle] <--> VehicleID([VehicleID])
+Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
+Vehicle[Vehicle] <--> V.Type([V.Type])
+Vehicle[Vehicle] <--> Status([Status])
+Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
+Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
+
+Employee[Employee] --> EmployeeID([EmployeeID])
+Employee[Employee] <--> Name([Name])
+Employee[Employee] <--> Role([Role])
+Employee[Employee] <--> PhoneNR([PhoneNR]) 
+Employee[Employee] <--> Active([Active]) 
+Assignment[Assignment] <--> AssignmentID([AssignmentID])
+Assignment[Assignment] <--> StartDate([StartDate])
+Assignment[Assignment] <--> EndDate([EndDate])
+Assignment[Assignment] <--> Address([Address])
+Maintenance[Maintenance] <--> Date([Date])
+Maintenance[Maintenance] <--> M.Type([M.Type])
+Maintenance[Maintenance] <--> MaintenanceID([MaintenanceID])
+Type[Type] <--> Model([Model])
+Type[Type] <--> Category([Category])
+Type[Type] <--> TypeID([TypeID])
+
+
+
+
+```
+
+
+
+
 
 
 
