@@ -40,3 +40,14 @@ Leje af bil kræver et kørekort
 - `|1,1|` fra Maintenance til Applies → hver Maintenance gælder **præcis én Vehicle**.
     
 - `|1,n|` fra Applies til Vehicle → hver Vehicle kan have **flere Maintenance-records**.
+
+
+
+
+Vehicle ||--o{ Maintenance : I
+Employee ||--o{ Assignment_Performance : I
+Assignment ||--o{ Assignment_Performance : I
+Vehicle ||--o{ Vehicle_Assignment : I
+Assignment ||--o{ Vehicle_Assignment : I
+Employee ||--o{ Employee_Operation : I
+Vehicle ||--o{ Employee_Operation : I

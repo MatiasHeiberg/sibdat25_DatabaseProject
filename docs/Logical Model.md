@@ -53,13 +53,13 @@ Integer employee_id PK, FK
 Integer vehicle_id PK, FK
 }
 
-Vehicle ||--o{ Maintenance : I
-Employee ||--o{ Assignment_Performance : I
-Assignment ||--o{ Assignment_Performance : I
-Vehicle ||--o{ Vehicle_Assignment : I
-Assignment ||--o{ Vehicle_Assignment : I
-Employee ||--o{ Employee_Operation : I
-Vehicle ||--o{ Employee_Operation : I
+Vehicle ||--o{ Maintenance : I-I_o-n
+Employee ||--o{ Assignment_Performance : I-I_0-n
+Assignment ||--o{ Assignment_Performance : I-I_0-n
+Vehicle ||--o{ Vehicle_Assignment : I-I_0-n
+Assignment ||--o{ Vehicle_Assignment : I-I_0-n
+Employee ||--o{ Employee_Operation : I-I_0-n
+Vehicle ||--o{ Employee_Operation : I-I_0-n
 
 
 
