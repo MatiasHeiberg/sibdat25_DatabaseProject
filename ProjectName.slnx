@@ -1,6 +1,4 @@
 <Solution>
-  <Folder Name="/Data/" />
-  <Folder Name="/Model/" />
-  <Project Path="FleetApp/FleetApp.csproj" Id="51e5a1bb-e351-47f6-a3e3-57c5abe3c828" />
-  <Project Path="FleetAppWPF/FleetAppWPF.csproj" Id="5521dcf6-1966-4d4f-a9d5-c22cce7219f5" />
+  <Project Path="../../../../../../Documents/GitHub/sibdat25_DatabaseProject/FleetApp/FleetApp.csproj" Id="51e5a1bb-e351-47f6-a3e3-57c5abe3c828" />
+  <Project Path="../../../../../../Documents/GitHub/sibdat25_DatabaseProject/FleetAppWPF/FleetAppWPF.csproj" Id="5521dcf6-1966-4d4f-a9d5-c22cce7219f5" />
 </Solution>
