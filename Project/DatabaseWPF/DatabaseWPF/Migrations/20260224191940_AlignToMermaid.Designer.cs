@@ -4,6 +4,7 @@ using DatabaseWPF.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatabaseWPF.Migrations
 {
     [DbContext(typeof(FleetDbContext))]
-    partial class FleetDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260224191940_AlignToMermaid")]
+    partial class AlignToMermaid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,12 +49,6 @@ namespace DatabaseWPF.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ActivityId");
-
-                    b.HasIndex("AssignmentId");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.HasIndex("VehicleId");
 
                     b.ToTable("Activities");
                 });
@@ -147,8 +144,6 @@ namespace DatabaseWPF.Migrations
 
                     b.HasKey("MaintenanceId");
 
-                    b.HasIndex("VehicleId");
-
                     b.ToTable("Maintenances");
                 });
 
@@ -186,44 +181,6 @@ namespace DatabaseWPF.Migrations
                         .HasFilter("[NumberPlate] IS NOT NULL");
 
                     b.ToTable("Vehicles");
-                });
-
-            modelBuilder.Entity("DatabaseWPF.Model.Activity", b =>
-                {
-                    b.HasOne("DatabaseWPF.Model.Assignment", "Assignment")
-                        .WithMany()
-                        .HasForeignKey("AssignmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DatabaseWPF.Model.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DatabaseWPF.Model.Vehicle", "Vehicle")
-                        .WithMany()
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Assignment");
-
-                    b.Navigation("Employee");
-
-                    b.Navigation("Vehicle");
-                });
-
-            modelBuilder.Entity("DatabaseWPF.Model.Maintenance", b =>
-                {
-                    b.HasOne("DatabaseWPF.Model.Vehicle", "Vehicle")
-                        .WithMany()
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
                 });
 #pragma warning restore 612, 618
         }

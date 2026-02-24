@@ -20,6 +20,7 @@ namespace DatabaseWPF
             {
                 using (var db = new FleetDbContext())
                     db.Database.Migrate();
+
             }
             catch (Exception ex)
             {
