@@ -33,7 +33,7 @@ Maintenance{
 INT maintenance_id PRIMARY KEY IDENTITY(1,1)
 DATE maintenance_date NOT NULL
 VARCHAR(30) maintenance_type 
-INT vehicle_id FOREIGN KEY
+INT vehicle_id FOREIGN KEY                         NOT NULL
 }
 
 Activity{
