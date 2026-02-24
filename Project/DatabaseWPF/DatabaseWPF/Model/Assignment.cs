@@ -6,7 +6,7 @@ namespace DatabaseWPF.Model
 {
     public class Assignment
     {
-        public int AssignementId { get; set; }
+        public int AssignmentId { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
         public string StreetName { get; set; }
