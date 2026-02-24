@@ -5,59 +5,61 @@ ER Diagram
 erDiagram
 
 Employee{
-employee_id
-surname
-first_name
-role
-phone_number
-employee_status
+Integer employee_id PK
+String surname 
+String first_name
+String role
+String phone_number
+String employee_status
 }
 
 Vehicle{
-vehicle_id
-number_plate
-vehicle_status
-vehicle_type
-next_service_date
-nextInspectionDate
+Integer vehicle_id PK
+String number_plate
+String vehicle_status
+String vehicle_type
+Date next_service_date
+Date next_inspection_date
 }
 
 Assignment{
-assignment_id
-start_date
-end_date
-street_name
-house_number
-postal_code
+Integer assignment_id PK
+Date start_date
+Date end_date
+String street_name
+String house_number
+String postal_code
 }
 
 Maintenance{
-maintenance_id
-maintenance_date
-maintenance_type
-vehicle_id_FK 
+Integer maintenance_id PK
+Date maintenance_date
+String maintenance_type
+Integer vehicle_id FK 
 }
 
 Assignment_Performance{
-employee_id_PK
-assignment_id_PK
+Integer employee_id PK, FK
+Integer assignment_id PK, FK
 }
 
 Vehicle_Assignment{
-vehicle_id_PK
-assignment_id_PK
+Integer vehicle_id PK, FK
+Integer assignment_id PK, FK
 }
 
 Employee_Operation{
-employee_id_PK
-vehicle_id_PK
+Integer employee_id PK, FK
+Integer vehicle_id PK, FK
 }
 
-
-
-
-
-
+Vehicle ||--o{ Maintenance : I
+Employee ||--o{ Assignment_Performance : I
+Assignment ||--o{ Assignment_Performance : I
+Vehicle ||--o{ Vehicle_Assignment : I
+Assignment ||--o{ Vehicle_Assignment : I
+Employee ||--o{ Employee_Operation : I
+Vehicle ||--o{ Employee_Operation : I
 
 
 
@@ -78,53 +80,6 @@ vehicle_id_PK
 
 
 
-```mermaid  
-flowchart TB
 
-Maintenance[Maintenance] --> |n,m|Applies{Applies} 
-Applies{Applies} --> |1,1|Vehicle[Vehicle]
-
-Employee[Employee] --> |n,m|Performs{Performs} 
-Performs{Performs} --> |n,m|Assignment[Assignment]
-
-Vehicle[Vehicle] --> |n,m|IsAssignedTo{IsAssignedTo}
-IsAssignedTo{IsAssignedTo} --> |n,m|Assignment[Assignment]
-
-Employee[Employee] --> |n,m|Operates{Operates} 
-Operates{Operates} --> |n,m|Vehicle[Vehicle]
-
-Vehicle[Vehicle] <--> VehicleId("<u>VehicleId</u>")
-Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
-
-Vehicle[Vehicle] <--> VehicleStatus([VehicleStatus])
-Vehicle[Vehicle] <--> VehicleType([VehicleType])
-Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
-Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
-
-Employee[Employee] --> EmployeeId("<u>EmployeeId</u>")
-Employee[Employee] <--> Surname([Surname])
-Employee[Employee] <--> FirstName([FirstName])
-Employee[Employee] <--> Role([Role])
-Employee[Employee] <--> PhoneNumber([PhoneNumber]) 
-Employee[Employee] <--> EmployeeStatus([EmployeeStatus]) 
-
-Assignment[Assignment] <--> AssignmentId("<u>AssignmentId</u>") 
-Assignment[Assignment] <--> StartDate([StartDate])
-Assignment[Assignment] <--> EndDate([EndDate])
-
-
-Assignment[Assignment] <--> StreetName([StreetName])
-Assignment[Assignment] <--> HouseNumber([HouseNumber])
-Assignment[Assignment] <--> PostalCode([PostalCode])
-Assignment[Assignment] <--> City(City)
-style City stroke-dasharray: 2
-
-
-Maintenance[Maintenance] <--> MaintenanceDate([MaintenanceDate])
-Maintenance[Maintenance] <--> MaintenanceType([MaintenanceType])
-Maintenance[Maintenance] <--> MaintenanceId("<u>MaintenanceId</u>")
-
-```
-```
 
 

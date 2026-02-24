@@ -4,16 +4,16 @@ ER Diagram
 flowchart TB
 
 Maintenance[Maintenance] --> |1,1|Applies{Applies} 
-Applies{Applies} --> |1,n|Vehicle[Vehicle]
+Applies{Applies} --> |0,n|Vehicle[Vehicle]
 
-Employee[Employee] --> |n,m|Performs{Performs} 
-Performs{Performs} --> |n,m|Assignment[Assignment]
+Employee[Employee] --> |0,n|Performs{Performs} 
+Performs{Performs} --> |1,n|Assignment[Assignment]
 
-Vehicle[Vehicle] --> |n,m|IsAssignedTo{IsAssignedTo}
-IsAssignedTo{IsAssignedTo} --> |n,m|Assignment[Assignment]
+Vehicle[Vehicle] --> |0,n|IsAssignedTo{IsAssignedTo}
+IsAssignedTo{IsAssignedTo} --> |1,n|Assignment[Assignment]
 
-Employee[Employee] --> |n,m|Operates{Operates} 
-Operates{Operates} --> |n,m|Vehicle[Vehicle]
+Employee[Employee] --> |0,n|Operates{Operates} 
+Operates{Operates} --> |0,n|Vehicle[Vehicle]
 
 Vehicle[Vehicle] <--> vehicle_id("<u>vehicle_id : Int</u>")
 Vehicle[Vehicle] <--> number_plate([number_plate : String])
@@ -80,52 +80,6 @@ Maintenance[Maintenance] <--> maintenance_id("<u>maintenance_id : Int</u>")
 
 
 
-Gammel version: 
-```mermaid  
-flowchart TB
-
-Maintenance[Maintenance] --> Applies{Applies} 
-Applies{Applies} --> Vehicle[Vehicle]
-
-Employee[Employee] --> Performs{Performs} 
-Performs{Performs} --> Assignment[Assignment]
-
-Vehicle[Vehicle] --> IsAssignedTo{IsAssignedTo}
-IsAssignedTo{IsAssignedTo} --> Assignment[Assignment]
-
-Employee[Employee] --> Operates{Operates} 
-Operates{Operates} --> Type[Type]
-
-Vehicle[Vehicle] --> IsOfType{IsOfType} 
-IsOfType{IsOfType} --> Type[Type]
-
-Vehicle[Vehicle] <--> VehicleId([VehicleId])
-Vehicle[Vehicle] <--> NumberPlate([NumberPlate])
-
-Vehicle[Vehicle] <--> VehicleStatus([VehicleStatus])
-Vehicle[Vehicle] <--> NextServiceDate([NextServiceDate])
-Vehicle[Vehicle] <--> NextInspectionDate([NextInspectionDate])
-
-Employee[Employee] --> EmployeeId([EmployeeId])
-Employee[Employee] <--> Name([Name])
-Employee[Employee] <--> Role([Role])
-Employee[Employee] <--> PhoneNumber([PhoneNumber]) 
-Employee[Employee] <--> EmployeeStatus([EmployeeStatus]) 
-Assignment[Assignment] <--> AssignmentId([AssignmentId])
-Assignment[Assignment] <--> StartDate([StartDate])
-Assignment[Assignment] <--> EndDate([EndDate])
-Assignment[Assignment] <--> Address([Address])
-Maintenance[Maintenance] <--> Date([Date])
-Maintenance[Maintenance] <--> MaintenanceType([MaintenanceType])
-Maintenance[Maintenance] <--> MaintenanceId([MaintenanceId])
-Type[Type] <--> Model([Model])
-Type[Type] <--> Category([Category])
-Type[Type] <--> TypeId([TypeId])
-
-
-
-
-```
 
 
 
