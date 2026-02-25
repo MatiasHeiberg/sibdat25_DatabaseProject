@@ -53,6 +53,7 @@ Integer employee_id PK, FK
 Integer vehicle_id PK, FK
 }
 
+
 Vehicle ||--o{ Maintenance : I-I_0-n
 Employee ||--o{ Assignment_Performance : I-I_0-n
 Assignment ||--o{ Assignment_Performance : I-I_0-n
@@ -62,14 +63,15 @@ Employee ||--o{ Employee_Operation : I-I_0-n
 Vehicle ||--o{ Employee_Operation : I-I_0-n
 
 
-
-
-
-
-
-
-
 ```
+
+
+
+
+
+
+
+
 
 
 
