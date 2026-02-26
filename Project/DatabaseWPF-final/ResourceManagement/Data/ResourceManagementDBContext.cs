@@ -10,7 +10,7 @@ namespace ResourceManagement.Data
 {
     public class ResourceManagementDBContext : DbContext
     {
-        private readonly string _connectionString = "Server=.\\SQLEXPRESS;Database=ResourceManagementDB;Trusted_Connection=True;";
+        private readonly string _connectionString = "Server=.\\SQLEXPRESS;Database=ResourceManagementDB;Trusted_Connection=True;Encrypt=False";
 
         DbSet<Vehicle> Vehicle { get; set; }
 
