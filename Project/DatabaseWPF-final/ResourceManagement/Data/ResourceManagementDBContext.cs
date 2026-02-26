@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ResourceManagement.Data
 {
-    internal class ResourceManagementDBContext
+    public class ResourceManagementDBContext
     {
+
     }
 }
