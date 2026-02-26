@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using ResourceManagement.Data;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,10 @@ namespace ResourceManagement
         public MainWindow()
         {
             InitializeComponent();
+
+           
+
+
         }
     }
 }
