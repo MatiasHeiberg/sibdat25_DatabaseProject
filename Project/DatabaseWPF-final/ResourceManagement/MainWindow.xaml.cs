@@ -62,6 +62,11 @@ namespace ResourceManagement
 
             LoadEmployees();
         }
+        /// <summary>
+        /// Henter det samlede antal medarbejdere fra databasen ved at kalde den stored procedure 'GetEmployeeCount'.
+        /// OBS: Denne funktion virker ikke, fordi vi ikke har løkkedes med at gemme den stored procedure på databasen.
+        /// Den ligger kun lokalt på vores maskine.
+        /// </summary>
         private void btnCount_Click_1(object sender, RoutedEventArgs e)
         {
             using var db = new ResourceManagementDBContext();
