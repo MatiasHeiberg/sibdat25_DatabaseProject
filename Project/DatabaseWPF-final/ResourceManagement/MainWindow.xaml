@@ -6,7 +6,44 @@
         xmlns:local="clr-namespace:ResourceManagement"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,10,15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgItems"
+          Grid.Row="0"
+          Grid.Column="0"
+          AutoGenerateColumns="True"
+          CanUserAddRows="False"
+          IsReadOnly="True" Margin="0,0,10,53"
+                  />
+        <StackPanel x:Name="Buttons" Orientation="Horizontal" Margin="0,352,0,29">
+            <TextBlock Text="FirstName:" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbFirstName" Width="90" />
+
+            <TextBlock Text="Surname:" VerticalAlignment="Center" />
+            <TextBox x:Name="tbSurname" Width="92" />
+
+            <TextBlock Text="PhoneNumber:" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbPhoneNumber" Width="95" />
+
+            <TextBlock Text="Role:" VerticalAlignment="Center" />
+            <TextBox x:Name="tbRole" Width="71" />
+
+            <Button x:Name="btnAdd" Content="Add" Width="69" Click="btnAdd_Click"/>
+            <Button x:Name="btnDelete" Content="Delete" Width="69" Click="btnDelete_Click"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="693,13,0,0" VerticalAlignment="Top" Width="90" Height="48" Grid.ColumnSpan="2">
+            <Label x:Name="labCount" Content="Count employees" Width="91" FontSize="9"/>
+
+            <Button x:Name="btnCount" Content="Count" Click="btnCount_Click_1"/>
+
+        </StackPanel>
 
     </Grid>
 </Window>

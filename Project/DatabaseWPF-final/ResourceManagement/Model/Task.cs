@@ -8,8 +8,8 @@ namespace ResourceManagement.Model
     {
         public int Id { get; set; }
         public string? StreetName { get; set; }
-        public int? HouseNumber { get; set; }
-        public int? PostalCode { get; set; } 
+        public string? HouseNumber { get; set; }
+        public string? PostalCode { get; set; } 
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
         public bool IsActive { get; set; } = true;
