@@ -12,8 +12,8 @@ using ResourceManagement.Data;
 namespace ResourceManagement.Migrations
 {
     [DbContext(typeof(ResourceManagementDBContext))]
-    [Migration("20260226123316_1")]
-    partial class _1
+    [Migration("20260226194616_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,7 +60,7 @@ namespace ResourceManagement.Migrations
                         .IsUnique()
                         .HasFilter("[PhoneNumber] IS NOT NULL");
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("ResourceManagement.Model.Maintenance", b =>
@@ -85,7 +85,7 @@ namespace ResourceManagement.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Maintenance");
+                    b.ToTable("Maintenances");
                 });
 
             modelBuilder.Entity("ResourceManagement.Model.Task", b =>
@@ -99,16 +99,16 @@ namespace ResourceManagement.Migrations
                     b.Property<DateTime?>("EndTime")
                         .HasColumnType("datetime");
 
-                    b.Property<int?>("HouseNumber")
+                    b.Property<string>("HouseNumber")
                         .HasMaxLength(10)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("PostalCode")
+                    b.Property<string>("PostalCode")
                         .HasMaxLength(10)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<DateTime?>("StartTime")
                         .HasColumnType("datetime");
@@ -119,7 +119,7 @@ namespace ResourceManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Task");
+                    b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("ResourceManagement.Model.TaskAssignment", b =>
@@ -153,7 +153,7 @@ namespace ResourceManagement.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("TaskAssignment");
+                    b.ToTable("TaskAssignments");
                 });
 
             modelBuilder.Entity("ResourceManagement.Model.Vehicle", b =>
@@ -187,7 +187,7 @@ namespace ResourceManagement.Migrations
                         .IsUnique()
                         .HasFilter("[LicensePlate] IS NOT NULL");
 
-                    b.ToTable("Vehicle");
+                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("ResourceManagement.Model.Maintenance", b =>
